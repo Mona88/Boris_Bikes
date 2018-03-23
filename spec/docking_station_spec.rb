@@ -6,18 +6,21 @@ require "docking_station"
 #   end
 # end
 
-describe DockingStation.new do
+describe DockingStation do
+  it 'responds to dock' do
+    expect(subject).to respond_to(:dock)
+  end
+
+  it 'raises an error when no bikes' do
+    expect { subject.release_bike }.to raise_error
+  end
+end
+
+
+describe DockingStation do
 bike = Bike.new
   it "expected to respond to release_bike" do
    is_expected.to respond_to (:release_bike)
-  end
-
-  it "gets a bike when passed release_bike" do
-   expect(subject.release_bike).to be_an_instance_of(Bike)
-  end
-
-  it "returns true if bike is working" do
-    expect(DockingStation.new.release_bike.working?).to be(true).or be(false)
   end
 
   it "expects to respond to dock" do
