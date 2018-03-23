@@ -6,7 +6,7 @@ class DockingStation
     @bikes = []
   end
 
-  def add_bike(bike)
+  def dock(bike)
     if @bikes.count == MAX_CAPACITY
       raise 
     end 
